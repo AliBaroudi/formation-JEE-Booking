@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+	
+	<f:metadata>
+	<f:viewParam name="id" value="#{restaurantTypeFaceBean.loadId}" />
+	<f:viewAction action="#{restaurantTypeFaceBean.onLoad}" />
+</f:metadata>
+
+<h:head>
+
+</h:head>
+<h:body>
+	<h:form prependId="false">
+	<h2>Restaurant Type form</h2>
+		<p>You can create, consult or update a restaurant type here!</p>
+		<p>
+		<label for="id">ID :</label><br />
+		<h:inputText id="id" name="ID" placeholder="ID Value" value="#{restaurantTypeFaceBean.loadId}" readonly="true" />
+	    </p>
+	    
+	    <!--p>
+	    <label for="id">ajaxName :</label><br />
+	    <h:inputText id="ajaxName" name="ajaxName" placeholder="AJAX Name" value="#{restaurantTypeFormBean.ajaxName}" readonly="true" />
+	    </p-->
+	    
+		<p>
+		<label for="name">Name :</label><br />
+		<h:inputText id="name" name="name" placeholder="Enter name here" value="#{restaurantTypeFormBean.name}">
+		<!-- f:ajax event="keyup" execute="name" render="ajaxName" /-->	
+		</h:inputText>
+		<h:commandButton value="save" action="#{restaurantTypeFaceBean.save}" />
+        <h:commandButton value="cancel" action="#{restaurantTypeFaceBean.cancel}" immediate = "true"/>
+		
+		</p>
+		
+	</h:form>
+</h:body>
+</html>
